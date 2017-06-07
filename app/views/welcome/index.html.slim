@@ -1,2 +1,4 @@
-h1 Welcome#index
-p Find me in app/views/welcome/index.html.slim
+h2 Main
+= link_to 'Edit profile', edit_user_path(current_user)
+br
+= current_user.email

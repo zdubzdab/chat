@@ -3,16 +3,31 @@ module ApplicationHelper
     link if user.present?
   end
 
-  def show_link_depend_on_user_role(user, links_for_admin, links_for_user)
+  def show_link_depend_on_user_role(user, links_for_admin, condition_for_admin,
+                                    links_for_user, condition_for_user)
     if user.nil?
     elsif user.has_role? :admin
-      links_for_admin
+      show_link_on_desired_page(links_for_admin, condition_for_admin)
     else
-      links_for_user
+      show_link_on_desired_page(links_for_user, condition_for_user)
     end
   end
 
   def time_fomat(time)
     time.strftime('%H:%M:%S  %Y-%m-%d')
+  end
+
+  def patch_depend_on_url(condition, user)
+    if condition
+      [:admin, user]
+    else
+      user
+    end
+  end
+
+  private
+
+  def show_link_on_desired_page(link, condition)
+    link unless condition
   end
 end

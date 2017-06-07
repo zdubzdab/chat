@@ -17,7 +17,9 @@ html
               li.pull-right
                 = show_link_depend_on_user_role(current_user,
                   (link_to 'Main page', admin_users_path),
-                  (link_to 'Main page', root_path))
+                  current_page?('/admin/users'), 
+                  (link_to 'Main page', root_path),
+                  current_page?('/'))
               li.pull-right= show_link_log_out(current_user,
                   (link_to 'Log out', sessions_destroy_path))
 
