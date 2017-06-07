@@ -7,4 +7,25 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     = csrf_meta_tags
 
-    = yield
+  body
+    .wrapper.container#container
+      header
+        p.main_header Chat
+        naw.navbar.navbar-info
+          .navbar-inner
+            ul.nav.navbar-nav
+              li.pull-right
+                = show_link_depend_on_user_role(current_user,
+                  (link_to 'Main page', admin_users_path),
+                  (link_to 'Main page', root_path))
+              li.pull-right= show_link_log_out(current_user,
+                  (link_to 'Log out', sessions_destroy_path))
+
+      .container-fluid#body
+        .row-fluid
+          #flash
+            p.notice= notice
+            p.alert= alert
+          .col-md-12
+
+            = yield
