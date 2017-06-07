@@ -11,4 +11,8 @@ module ApplicationHelper
       links_for_user
     end
   end
+
+  def time_fomat(time)
+    time.strftime('%H:%M:%S  %Y-%m-%d')
+  end
 end

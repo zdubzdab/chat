@@ -14,6 +14,14 @@ h1, h2, h3, h4 {
   color: #0071B5;
 }
 
+#error_explanation {
+  border: 1px solid #0071B5;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #fcf8e3;
+}
+
       /* header */
 .main_header {
   width: 40%;

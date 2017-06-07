@@ -1,0 +1,23 @@
+= form_for [:admin, @user] do |f|
+  - if @user.errors.any?
+      #error_explanation
+        h4
+          = t('errors.messages.not_saved', count: @user.errors.count, resource: User.model_name.human)
+        ul
+          - @user.errors.full_messages.each do |msg|
+            li= msg
+  .col-md-4
+    .form-group
+      = f.label :name
+      = f.text_field :name, class: 'form-control'
+    .form-group
+      = f.label :email
+      = f.text_field :email, class: 'form-control'
+    .form-group
+      = f.label :password, 'Password'
+      = f.password_field :password, autocomplete: 'off', class: 'form-control'
+    .form-group
+      = f.label :password_confirmation, 'Password confirmation'
+      = f.password_field :password_confirmation, autocomplete: 'off', class: 'form-control'    
+    .form-group
+      = f.submit 'Submit', class: 'btn btn-info'
