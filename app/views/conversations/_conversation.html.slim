@@ -1,16 +1,15 @@
 .media
   .media-body
-    h4.media-heading
+    b
       = conversation.originator.name
-      br
-      small
-        b
-          | Subject: 
-        = conversation.subject
-      br
-      small
-        b
-          | Date: 
-        = time_fomat(conversation.messages.last.created_at)
+    br
+    b Subject:
+    = conversation.subject
+    br
+    b Text:
     = truncate conversation.messages.last.body, length: 145
-    = link_to 'View', conversation_path(conversation)
+    br
+    b Date:
+    = time_fomat(conversation.messages.last.created_at)
+    br
+    = link_to 'View details', conversation_path(conversation)

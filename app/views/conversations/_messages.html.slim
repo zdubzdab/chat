@@ -2,16 +2,15 @@
   - message = receipt.message
   .media
     .media-body
-      h4.media-heading
+      b
         = message.sender.name
-        br
-        small
-          b
-            | Subject: 
-          = message.subject
-        br
-        small
-          b
-            | Date: 
-          = time_fomat(message.created_at)
+      br
+      b Subject:
+      = message.subject
+      br
+      b Text:
       = message.body
+      br
+      b Date:
+      = time_fomat(message.created_at)
+

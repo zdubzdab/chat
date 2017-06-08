@@ -1,0 +1,28 @@
+b
+  | Your email: 
+  = current_user.email
+  br
+  | Your name: 
+  = current_user.name
+  br
+  br
+= link_to 'Edit profile', edit_user_path(current_user)
+br
+br
+= link_to 'New message', new_conversation_path, class: 'btn btn-info'
+br
+br
+
+.panel.panel-default
+  .panel-body
+    ul.nav.nav-pills.nav-stacked
+      li
+        = link_to root_path do
+          span.label.label-danger.pull-right
+            = unread_messages_count
+          em.fa.fa-inbox.fa-lg
+          span Inbox
+      li
+        = link_to mailbox_sent_path do
+          em.fa.fa-paper-plane-o.fa-lg
+          span Sent

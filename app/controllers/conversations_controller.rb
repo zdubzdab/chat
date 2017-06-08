@@ -4,16 +4,16 @@ class ConversationsController < ApplicationController
 
   def create
     recipients = User.where(id: conversation_params[:recipients])
-    conversation = current_user
-                   .send_message(recipients, conversation_params[:body],
-                                conversation_params[:subject])
-                   .conversation
+    conversation = current_user.send_message(recipients,
+                    conversation_params[:body], conversation_params[:subject])
+                               .conversation
     redirect_to conversation_path(conversation), notice: 'Your message was'\
       ' successfully sent!'
   end
 
   def show
     @receipts = conversation.receipts_for(current_user)
+                            .order('created_at ASC')
     conversation.mark_as_read(current_user)
   end
 

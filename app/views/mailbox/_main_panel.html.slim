@@ -1,0 +1,10 @@
+h2 Main
+.col-md-4
+  = render 'mailbox/left_panel'
+.col-md-8
+  .panel.panel-default
+    .panel-body
+      - if is_conversation
+        = render 'conversations/form'
+      - else 
+        = render partial: 'conversations/conversation', collection: messages
