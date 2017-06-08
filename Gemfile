@@ -36,3 +36,4 @@ gem 'bcrypt'
 gem 'twitter-bootstrap-rails'
 gem 'rubocop', require: false
 gem 'rolify'
+gem 'mailboxer'

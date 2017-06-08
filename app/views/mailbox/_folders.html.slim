@@ -1,0 +1,14 @@
+ul.nav.nav-pills.nav-stacked
+  li
+    = link_to root_path do
+      span.label.label-danger.pull-right
+        = unread_messages_count
+      em.fa.fa-inbox.fa-lg
+      span
+        | Inbox
+
+  li
+    = link_to mailbox_sent_path do
+      em.fa.fa-paper-plane-o.fa-lg
+      span
+        | Sent

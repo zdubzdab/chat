@@ -1,0 +1,17 @@
+- @receipts.each do |receipt|
+  - message = receipt.message
+  .media
+    .media-body
+      h4.media-heading
+        = message.sender.name
+        br
+        small
+          b
+            | Subject: 
+          = message.subject
+        br
+        small
+          b
+            | Date: 
+          = time_fomat(message.created_at)
+      = message.body

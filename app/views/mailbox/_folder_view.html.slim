@@ -1,0 +1,21 @@
+h2 Main
+.row
+  .spacer
+  .col-md-12
+    = link_to 'Edit profile', edit_user_path(current_user)
+    br
+    = link_to 'Compose', new_conversation_path, class: 'btn btn-success'
+    .spacer
+    = current_user.email
+  .col-md-4
+    .panel.panel-default
+      .panel-body
+        = render 'mailbox/folders'
+
+  .col-md-8
+    .panel.panel-default
+      .panel-body
+        - if is_conversation
+          = render 'conversations/form'
+        - else 
+          = render partial: 'conversations/conversation', collection: messages

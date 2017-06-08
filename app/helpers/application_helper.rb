@@ -14,7 +14,7 @@ module ApplicationHelper
   end
 
   def time_fomat(time)
-    time.strftime('%H:%M:%S  %Y-%m-%d')
+    time.strftime('%A, %b %d, %Y at %I:%M%p')
   end
 
   def patch_depend_on_url(condition, user)

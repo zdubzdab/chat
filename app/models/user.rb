@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   rolify
+  acts_as_messageable
   has_secure_password
 
   validates :name, presence: true,
@@ -10,4 +11,12 @@ class User < ApplicationRecord
                               message: 'bad format' }, uniqueness: true
   validates :password, confirmation: true
   validates_length_of :password, in: 6..15, on: :create
+
+  def mailboxer_name
+    self.name
+  end
+
+  def mailboxer_email
+    self.email
+  end
 end
