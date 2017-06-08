@@ -19,4 +19,6 @@ class User < ApplicationRecord
   def mailboxer_email
     self.email
   end
+
+  scope :all_except, ->(user) { where.not(id: user) }
 end

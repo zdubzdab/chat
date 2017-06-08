@@ -1,7 +1,7 @@
 .row
   .spacer
   .col-md-12
-    = link_to "Compose", new_conversation_path, class: "btn btn-success"
+    = link_to 'Compose', new_conversation_path, class: 'btn btn-success'
     .spacer
   .col-md-4
     .panel.panel-default
@@ -11,10 +11,9 @@
     .panel.panel-default
       .panel-body
         = render partial: 'messages'
-        
       .panel-footer
         = form_for :message, url: reply_conversation_path(conversation) do |f|
           .form-group
-            = f.text_area :body, placeholder: "Reply Message", rows: 4, class: "form-control"
-          = f.submit "Reply", class: 'btn btn-danger pull-right'
+            = f.text_area :body, placeholder: 'Reply Message', rows: 4, class: 'form-control'
+          = f.submit 'Reply', class: 'btn btn-danger pull-right'
         .clearfix
