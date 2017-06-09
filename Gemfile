@@ -18,6 +18,8 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'pry'
+  gem 'rspec-rails', '~> 3.5'
+  gem 'factory_girl_rails'
 end
 
 group :development do
@@ -28,8 +30,12 @@ group :development do
   gem 'pry-rails'
 end
 
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+group :test do
+  gem 'capybara'
+  gem 'shoulda-matchers', '~> 3.1'
+end
 
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'slim'
 gem 'slim-rails'
 gem 'bcrypt'
