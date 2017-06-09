@@ -23,6 +23,11 @@ class ConversationsController < ApplicationController
       ' successfully sent!'
   end
 
+  def refresh_unread_messages
+    render json: { content: current_user.unread_inbox_count.to_s } if
+      request.xhr?
+  end
+
   private
 
   def conversation_params

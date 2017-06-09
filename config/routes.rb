@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get 'sessions/destroy'
 
+  get 'conversations/refresh_unread_messages' =>
+    'conversations/refresh_unread_messages'
+
   resources :users, only: [:edit, :update]
 
   resources :conversations do

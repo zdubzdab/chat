@@ -5,11 +5,13 @@ b
   | Your name: 
   = current_user.name
   br
-  br
 = link_to 'Edit profile', edit_user_path(current_user)
 br
 br
-= link_to 'New message', new_conversation_path, class: 'btn btn-info'
+= link_to 'Check for new messages', '#', id: 'link_update', class: 'btn btn-info'
+br
+br
+= link_to 'Write message', new_conversation_path, class: 'btn btn-info'
 br
 br
 
@@ -18,7 +20,7 @@ br
     ul.nav.nav-pills.nav-stacked
       li
         = link_to root_path do
-          span.label.label-danger.pull-right
+          span.label.label-danger.pull-right#unread_messages
             = unread_messages_count
           em.fa.fa-inbox.fa-lg
           span Inbox
