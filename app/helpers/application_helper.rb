@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def show_link_log_out(user, link)
+  def show_link_for_users(user, link)
     link if user.present?
   end
 
