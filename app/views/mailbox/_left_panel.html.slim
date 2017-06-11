@@ -1,9 +1,9 @@
 b
-  | Your email: 
-  = current_user.email
-  br
   | Your name: 
   = current_user.name
+  br
+  | Your email: 
+  = current_user.email
   br
 = link_to 'Edit profile', edit_user_path(current_user)
 br

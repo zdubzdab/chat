@@ -1,4 +1,3 @@
-require './app/controllers/application_controller'
-task send_message: :environment do
-  User.find(1).send_message(User.find(2), 'Title', 'Subject').conversation
+task send_new_message: :environment do
+  User.first.send_message(User.last, 'Title', 'Subject').conversation
 end

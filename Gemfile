@@ -33,6 +33,7 @@ end
 group :test do
   gem 'capybara'
   gem 'shoulda-matchers', '~> 3.1'
+  gem 'database_cleaner'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
@@ -43,3 +44,4 @@ gem 'twitter-bootstrap-rails'
 gem 'rubocop', require: false
 gem 'rolify'
 gem 'mailboxer'
+gem 'capybara-webkit'

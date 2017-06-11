@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'mailbox/sent' => 'mailbox#sent', as: :mailbox_sent
 
   get 'sessions/new'
-  post '/login' => 'sessions#create'
+  post 'sessions/create'
   get 'sessions/destroy'
 
   get 'conversations/refresh_unread_messages' =>
