@@ -10,9 +10,9 @@ feature 'User manage messagess' do
     log_in user1
     visit root_path
 
-    expect(page).to have_content('Main page')
-    expect(page).to have_content('Your name: user1')
-    expect(page).to have_content('Your email: user1@gmail.com')
+    expect(page).to have_content('Messages')
+    expect(page).to have_content("Your name: #{user1.name}")
+    expect(page).to have_content("Your email: #{user1.email}")
   end
 
   it 'should have the right links on the page' do

@@ -12,7 +12,7 @@ feature 'Authorisation' do
     expect(page).to have_content('Chat')
     expect(page).to have_content('Log in')
     expect(page).not_to have_content('Log out')
-    expect(page).not_to have_content('Main page')
+    expect(page).not_to have_content('Messages')
   end
 
   context 'admin' do

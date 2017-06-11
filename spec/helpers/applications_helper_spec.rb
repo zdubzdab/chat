@@ -13,7 +13,7 @@ describe ApplicationHelper do
       ).to eq((link_to 'Main page', root_path))
       expect(
         show_link_for_users(nil, (link_to 'Main page', root_path))
-      ).to eq()
+      ).to eq(())
     end
   end
 
@@ -21,8 +21,9 @@ describe ApplicationHelper do
     it 'show link on desired pages' do
       expect(
         show_link_depend_on_user_role(admin, (link_to 'Admin page', '#'),
-                                      true, (link_to 'User page', '#'), false)
-      ).to eq()
+                                      true, (link_to 'User page', '#'), false
+        )
+      ).to eq(())
       expect(
         show_link_depend_on_user_role(
           admin, (link_to 'Admin page', '#'), false,
@@ -31,8 +32,9 @@ describe ApplicationHelper do
       ).to eq((link_to 'Admin page', '#'))
       expect(
         show_link_depend_on_user_role(user, (link_to 'Admin page', '#'),
-                                      true, (link_to 'User page', '#'), true)
-      ).to eq()
+                                      true, (link_to 'User page', '#'), true
+        )
+      ).to eq(())
       expect(
         show_link_depend_on_user_role(
           user, (link_to 'Admin page', '#'), false,

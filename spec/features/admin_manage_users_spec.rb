@@ -9,8 +9,8 @@ feature 'Admin manage users' do
     visit admin_users_path
 
     expect(page).to have_content('Users')
-    expect(page).to have_content('user')
-    expect(page).to have_content('user1@gmail.com')
+    expect(page).to have_content("#{admin.name}")
+    expect(page).to have_content("#{admin.email}")
     expect(page).to have_content('Created at')
   end
 
@@ -21,6 +21,12 @@ feature 'Admin manage users' do
     click_link 'Create user'
     expect(page).to have_button('Submit')
     expect(current_path).to eq(new_admin_user_path)
+
+    visit admin_users_path
+    click_on 'Messages'
+    expect(page).to have_content("Your name: #{admin.name}")
+    expect(page).to have_content("Your email: #{admin.email}")
+    expect(current_path).to eq(root_path)
 
     visit admin_users_path
     click_on 'Edit'
